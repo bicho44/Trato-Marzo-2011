@@ -1,0 +1,1157 @@
+@import "bootstrap.less";
+@import "grid960.less";
+
+/* Bootstrap it!*/
+@red: rgb(216,47,25);
+@azul: rgb(15,130,234);
+@green: rgb(93, 178, 60);
+@gray-dark: rgb(100,100,100);
+@gray-lighter: rgb(233,233,233);
+
+@text-color:  @gray-dark;
+@back-color:  @green;
+
+@text-disable: @gray-lighter;
+@back-disable: @gray-lighter;
+
+// Links
+@link-color: @green;
+@link-hover-color: darken(@link-color, 10);
+
+// Cliping
+.background-clip() {
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+}
+
+/* @group HTML5 */
+/*
+  HTML5 ✰ Boilerplate
+
+  style.css contains a reset, font normalization and some base styles.
+
+  credit is left where credit is due.
+  much inspiration was taken from these projects:
+    yui.yahooapis.com/2.8.1/build/base/base.css
+    camendesign.com/design/
+    praegnanz.de/weblog/htmlcssjs-kickstart
+*/
+
+/*
+  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
+  html5doctor.com/html-5-reset-stylesheet/
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display:block;
+}
+
+nav ul { list-style:none; }
+
+blockquote, q { quotes:none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+ins { background-color:lighten(@yellow, 25%); color:@black; text-decoration:none; }
+
+mark { background-color:lighten(@yellow, 25%); color:#000; font-style:italic; font-weight:bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
+
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse:collapse; border-spacing:0; }
+
+hr { display:block; height:1px; border:0; border-top:1px solid @gray-lighter; margin:1em 0; padding:0; }
+
+input, select { vertical-align:middle; }
+
+/* END RESET CSS */
+/* fonts.css from the YUI Library: developer.yahoo.com/yui/
+   Refer to developer.yahoo.com/yui/3/cssfonts/ for font sizing percentages
+
+  There are three custom edits:
+   * remove arial, helvetica from explicit font stack
+   * we normalize monospace styles ourselves
+   * table font-size is reset in the HTML5 reset above so there is no need to repeat
+*/
+body { font:13px/1.231 sans-serif; *font-size:small; } /* hack retained to preserve specificity */
+
+/*select, input, textarea, button { font:99% sans-serif; }*/
+
+/* normalize monospace sizing
+ * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
+*/
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+/* These selection declarations have to be separate.
+   No text-shadow: twitter.com/miketaylr/status/12228805301
+   Also: hot pink. */
+
+::-moz-selection{ background: @back-color; color:@white; text-shadow: none; }
+::selection { background:@back-color; color: @white; text-shadow: none; }
+
+
+/* Resets UL */
+.clearul()
+{
+    margin: 0;
+    list-style-image: none;
+    list-style-type: none;
+}
+
+/*
+ * minimal base styles
+*/
+
+body, select, input, textarea {
+
+    #font > .sans-serif(normal,11px,1.6);
+
+    /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+    color: @text-color;
+    /* set your base font here, to apply evenly */
+    /* font-family: Georgia, serif;  */
+}
+
+/* Headers (h1,h2,etc) have no default font-size or margin,
+   you'll want to define those yourself. */
+h1,h2,h3,h4,h5,h6 { font-weight: bold; }
+
+/* always force a scrollbar in non-IE */
+html { overflow-y: scroll; }
+
+
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active { outline: none; }
+
+a 
+{ 
+    color: @link-color;
+     &:active, &:visited {color: @link-color;}
+     &:hover {color: @link-hover-color;}
+}
+
+/*  j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: saturate(@back-color,10%); }
+
+ul, ol { margin-left: 1.8em; }
+ol { list-style-type: decimal; }
+
+/* Remove margins for navigation lists */
+nav ul, nav li { margin: 0; }
+
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+
+td, td img { vertical-align: top; }
+
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+
+pre {
+    padding: 15px;
+
+    /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+/* Formalize */
+
+/* `Widths
+----------------------------------------------------------------------------------------------------*/
+
+.input_tiny { width: 50px; }.input_small { width: 100px; }.input_medium { width: 150px; }.input_large { width: 200px; }.input_xlarge { width: 250px; }.input_xxlarge { width: 300px; }.input_full { width: 100%; }
+
+/*
+  Added via JS to <textarea> and class="input_full".
+  Applies only to IE7. Other browsers don't need it.
+*/
+.input_full_wrap { display: block; padding-right: 8px; }
+
+/* `UI Consistency
+----------------------------------------------------------------------------------------------------*/
+
+::-moz-focus-inner { border: 0; }
+
+input[type="search"]::-webkit-search-decoration { display: none; }
+
+input,
+button,
+select,
+textarea {
+    .background-clip;
+    margin: 0;
+    vertical-align: middle;
+}
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+    -webkit-appearance: none;
+
+    .button(@grayLighter, @text-color, 0 1px 1px rgba(255,255,255,1), 13px, 3px 10px 4px, 11px); 
+   
+    border: 1px solid;
+
+    outline: 0;
+    overflow: visible;
+    width: auto;
+
+    /* IE7 */
+    *padding-top: 2px;
+    *padding-bottom: 0px;
+}
+
+button {
+    /* IE7 */
+    *padding-top: 1px;
+    *padding-bottom: 1px;
+}
+
+button[disabled],
+input[type="reset"][disabled],
+input[type="submit"][disabled],
+input[type="button"][disabled] {
+    color: @text-disable;
+}
+
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+    -webkit-appearance: none;
+    .border-radius(0);
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+   
+    background-color: #fff;
+    border: 1px solid;
+
+    border-color: #848484 #c1c1c1 #e1e1e1;
+    color: @text-color;
+    outline: 0;
+
+    padding: 2px 3px;
+
+    /* IE7 */
+    *padding-top: 2px;
+    *padding-bottom: 1px;
+    *height: auto;
+}
+
+/*
+  Separate rule for Firefox.
+  Cannot stack with WebKit's.
+*/
+input.placeholder_text,
+textarea.placeholder_text,
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: @text-disable;
+}
+
+::-webkit-input-placeholder {
+    color: @text-disable;
+}
+
+textarea[disabled],
+select[disabled],
+input[type="date"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="email"][disabled],
+input[type="month"][disabled],
+input[type="number"][disabled],
+input[type="password"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="text"][disabled],
+input[type="time"][disabled],
+input[type="url"][disabled],
+input[type="week"][disabled] {
+    background-color: @gray-lighter;
+    color: @text-disable;
+}
+
+button:focus,
+button:active,
+input:focus,
+input:active,
+select:focus,
+select:active,
+textarea:focus,
+textarea:active {
+
+    .box-shadow(0 0 7px rgba(0,0,0,.25));
+
+    /* for Opera */
+    z-index: 1;
+}
+
+input[type="file"]:focus,
+input[type="file"]:active,
+input[type="radio"]:focus,
+input[type="radio"]:active,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:active {
+    .box-shadow(none);
+}
+
+.is_webkit select {
+    /* Tweaks for Safari + Chrome. */
+    background-image: url(../img/select_arrow.gif);
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 20px;
+}
+
+textarea,
+select[multiple] {
+    height: auto;
+}
+
+select[multiple],
+.is_webkit select[multiple] {
+    background-image: none;
+    padding: 0;
+}
+
+textarea {
+    min-height: 40px;
+    overflow: auto;
+    resize: vertical;
+    width: 100%;
+}
+
+optgroup {
+    color: @black;
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* `IE6
+----------------------------------------------------------------------------------------------------*/
+
+/*
+  Everything below this line is for IE6.
+  Delete it if you don't support it! :)
+
+  Classes are added dynamically via JS,
+  because IE6 doesn't support attribute
+  selectors: .ie6_button, .ie6_input, etc.
+
+  Note: These style rules are somewhat
+  duplicated because IE6 bombs out when
+  it sees attribute selectors. Example:
+
+  .ie6_button {
+    This works in IE6.
+  }
+
+  .ie6_button,
+  input[type=submit] {
+    This doesn't work.
+  }
+*/
+
+.ie6_button,
+* html button {
+    background: #ddd url(../images/button.png) repeat-x;
+    border: 1px solid;
+    border-color: #ddd #bbb #999;
+    cursor: pointer;
+    color: @link-color;
+    font: bold 12px/1.2 Arial, sans-serif;
+    padding: 2px 10px 0px;
+    overflow: visible;
+    width: auto;
+}
+
+* html button {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.ie6_input,
+* html textarea,
+* html select {
+    background: #fff;
+    border: 1px solid;
+    border-color: #848484 #c1c1c1 #e1e1e1;
+    color: @link-color;
+    padding: 2px 3px 1px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    vertical-align: top;
+}
+
+* html select {
+    margin-top: 1px;
+}
+
+.placeholder_text,
+.ie6_input_disabled,
+.ie6_button_disabled {
+    color: @text-disable;
+}
+
+.ie6_input_disabled {
+    background: @back-disable;
+}
+
+
+
+/* Trato Mayo */
+
+body { background-color: lighten(@back-color,40%);}
+
+#container {
+    .container960;
+    margin-top:10px;
+    background-color: @white;
+    
+    > header{
+        border-top: 1px solid lighten(@back-color,30%);
+        padding: 7px 0;
+        height: 141px;
+        background-color: lighten(saturate(@back-color,25%),25%);
+        .clearfix;
+        
+    }
+}
+
+#logo 
+{
+    .grid960(3);
+    .alpha;
+    > img { margin-top:20px; margin-left:10px; }
+}
+
+#botonera-principal {
+    .grid960(9);
+    
+    ul {
+        position: relative;
+        z-index:10;
+        
+        width: 485px;
+        height: 127px;
+        border: 4px solid #204f26;
+        margin-right: auto;margin-left: auto;
+        .border-radius(15px);
+        
+        background: url(../img/botonera-principal.jpg) no-repeat;
+
+            li 
+            { 
+                float: left;
+                text-indent:-9999em;
+                a 
+                { 
+                    color: @white;
+                    display:block;
+                    height: 127px;
+                    cursor:pointer;
+                    .transition(color 1s linear);
+            }
+        }
+    }
+}
+
+#reservas a 
+    {
+        width: 93px;
+        &:hover
+            {
+             background: url(../img/botonera-principal.jpg) no-repeat 0 -128px;
+             z-index:-10;
+             .border-radius(10px 0 0 10px);
+        }
+}
+
+#pcosta  a {width: 98px;
+            &:hover{background: url(../img/botonera-principal.jpg) no-repeat -93px -128px;}
+}
+#pcerro  a {width: 100px;
+            &:hover{background: url(../img/botonera-principal.jpg) no-repeat -191px -128px;}
+}
+#pbaja   a {width: 101px;
+            &:hover{background: url(../img/botonera-principal.jpg) no-repeat -291px -128px;}
+}
+#prental a {width: 93px;
+            &:hover{background: url(../img/botonera-principal.jpg) no-repeat -392px -128px;
+            .border-radius(0 10px 10px 0);
+}
+}
+
+#sidebar-header
+    {
+    .grid960(4);
+    .omega;
+    height:141px;
+    background-color: lighten(@back-color,15%);
+    .clearfix;
+    
+    }
+
+
+/* Lenguaje */
+
+#lenguaje { 
+        ul
+        {
+            width:158px;
+            height: 26px;
+            margin:12px auto;
+            list-style-image: none;
+            list-style-type: none;
+            li 
+            {
+                margin-left:0;
+                float:left;
+                margin-right:13px;
+                background: url(../img/banderas.png) no-repeat 0 0;
+                
+                   &.spain{ background-position: 0 -56px; width: 44px; height: 26px; }
+                   &.england{ background-position: 0 -28px; width: 44px; height: 26px; } 
+                   &.brasil{ background-position: 0 0; width: 44px; height: 26px; margin-right:0;} 
+                
+                    a {
+                    display: block;
+                    width: 44px;
+                    height: 26px;
+                    text-indent: -9999em;
+                    }
+            }
+       }
+}
+  
+#botonera-secundaria {
+    padding-top: 10px;
+    ul 
+    {
+        list-style-image: none;
+        list-style-type: none;
+        margin: 0 12px;
+        
+        li a
+        {
+            .button(@back-color, @white, 0 1px 2px rgba(0,0,0,.8), 16px, 4px 18px, 6px);
+            margin-bottom: 10px;
+            letter-spacing:1px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            width: 158px;
+        }
+    }
+}
+
+/* Buscador */
+
+#buscador
+    {
+    background-color: @gray-lighter;
+    border-top: 1px solid @back-color;
+    .clearfix;
+}
+
+#buscaprop{
+    .grid960(13);
+    .alpha;
+    padding-left: 10px;
+
+    label{font-weight: bold;}
+    .row{margin: 15px 0;}
+}
+
+input[type="submit"]
+{
+    .button(@back-color, @white, 0 1px 1px @gray, 11px, 3px 10px 4px, 11px);
+    border: 1px solid darken(@back-color, 20%);
+}
+
+#excursiones
+{
+    .grid960(3);
+    .omega;
+}
+
+/* Main */
+
+#mediamain
+    {
+        .grid960(12);
+        padding-bottom: 10px; 
+        padding-top: 10px; 
+        h4,p {padding:0 10px;}
+        h4, a 
+        {
+            color: @red;
+            text-decoration: none;
+        }
+    }
+
+#main
+{
+    border-top: 3px solid @back-color;
+    
+    aside
+    {
+        .grid960(4);
+        
+        h3
+        {
+            font-size: 14px;
+            margin-bottom: 5px;
+            
+            color: @gray;
+        }
+    }
+    .clearfix;
+    
+}
+
+#mapa
+{
+    background-color:@gray-lighter;
+    padding-bottom: 5px;
+}
+
+@anchopropiedades: 700px;
+
+#propiedades {
+    
+    h2
+    {
+        padding: 10px 0;
+        font-size: 16px;
+        margin-top: 8px;
+        border-top: 2px solid @back-color;
+        border-bottom: 2px solid @back-color;
+    }
+    a {
+        color: @azul;
+        font-weight: bold;
+        &:hover{text-decoration: underline;}
+    }
+    
+    .propiedad
+    {
+        
+        padding: 10px 0;
+        border-bottom: 1px solid @grayLight;
+        
+        
+        h4,p {padding:0;}
+        
+/*        &:nth-of-type(odd) {background-color: @gray-lighter;}*/
+        .info {
+            font-size: 12px;
+            font-weight: bold;
+            .codigo {color:@red;}
+            .titular {color:@gray;}
+            .precio {color:@red;}
+            margin-bottom: 10px;
+        }
+        .descripcion{
+            background-color: @gray-lighter; padding: 5px; margin-top: 5px;
+            a {
+                color:@red;
+                font-weight: normal;
+            }
+        
+        }
+    }
+    
+}
+
+@prop: 228/336;
+@anchofotos: 418px;
+@altofotos: round(@prop * @anchofotos);
+@pad: 8px;
+
+// Columna de Fotos
+.colfotos
+{
+   float: left;
+   /* Ancho de las fotos + el padding */
+   width: @anchofotos + (@pad*2);
+   margin-right: 10px;
+   position: relative;
+    .clearfix;
+   
+   .botonera
+   {
+   position: absolute;
+   @marginfromfotos: 20px;
+      a
+       {
+       color: @white !important;
+       cursor: pointer;
+            &.browse
+            {
+                .button(@green, @white, 0 1px 1px lighten(@green,10%), 12px, 3px 10px, 3px);
+                text-transform: uppercase;
+                float: left;
+                margin: @marginfromfotos auto 0;
+            }
+        }
+        
+         // Navigator
+        .navi {
+            height: 20px;
+            overflow: hidden;
+            float: left;
+            margin: @marginfromfotos auto 0;
+            
+             a {
+                width:17px;
+                height:17px;
+                float:left;
+                margin:3px;
+                background:url(../img/nav-tabs.png) 0 0 no-repeat;
+                display:block;
+                font-size:1px;
+
+                /* mouseover state */
+                &:hover {
+                        background-position:0 -17px;      
+                }
+                /* active state (current page state) */
+                &.active {
+                        background-position:0 -34px;     
+                }
+            }
+        } /* End Navi */
+   } 
+   
+   
+    
+    // Fotos
+    .fotos 
+    {
+       @border: 2px;
+       border: @border solid @back-color;
+       background-color: @white;
+       padding: @pad;
+       
+        .scroll {
+            /* Compenzar el ancho del border */
+            width: @anchofotos - (@border*2);
+            height: @altofotos;
+
+            position:relative;
+            overflow:hidden;
+            
+            ul {
+                width:20000em;
+                position:absolute;
+                clear:both;
+                margin: 0;
+                list-style-image: none;
+                list-style-type: none;
+
+                li {
+                    float:left;
+                    cursor:pointer;
+                    width: @anchofotos !important;
+                    height: @altofotos;
+                    margin:0;
+                    > img {max-width: 100%;}
+                }
+            }
+        } /* End Scroll */
+        
+        
+    } /* End Fotos */
+    
+} /* End Col Fotos */
+
+
+@margin: 10px;
+@anchodatos: @anchopropiedades - @anchofotos - @margin;
+
+.datos
+{
+    
+    color: @gray-dark;
+    width: @anchodatos - 20px;
+    float: left;
+    .clearfix;
+    
+    .botonconsulta 
+    {
+        text-transform: uppercase;
+        color: @white !important;
+        margin-top: @margin;
+        
+        .button(@red, @white, 0 1px 1px lighten(@red,10%), 12px, 3px 12px, 3px);
+    }
+    
+    ul {
+    .clearul;
+    .clearfix;
+    
+    &.iconos
+    {
+        border-bottom: 1px solid @grayLight;
+        height: 70px;
+        
+        li
+        {
+          @width: (@anchodatos - (@margin*3))/4;
+          float:left;
+          margin-right: @margin;
+          background: url(../img/iconos.png) no-repeat top left;
+          li:last-child {margin-right:0;}
+          
+            &.pasajeros  {width:@width - 30; padding-left: 20px; background-position: -98px 0; height: 30px;}
+            &.camas      {width:@width; padding-top: 20px; background-position: -481px 0; height: 18px;}
+            &.internet   {width:@width - 25; padding-top: 25px; background-position: -279px 0; height: 23px;}
+            &.telefono   {width:@width; padding-top: 26px; background-position: -383px 0; height: 24px;}
+          
+        }
+      } /* End Iconos */
+      
+      
+    } /* End UL */
+    
+    /*
+    .iconos-base{ background: url(../img/iconos.png) no-repeat top left;}
+    
+        .icon-121-landscape{ background-position: 0 0; width: 24px; height: 18px; } 
+        .icon-41-man{ background-position: -98px 0; width: 11px; height: 30px; } 
+        .icon-53-house{ background-position: -183px 0; width: 22px; height: 22px; } 
+        .icon-55-wifi{ background-position: -279px 0; width: 30px; height: 23px; } 
+        .icon-75-phone{ background-position: -383px 0; width: 24px; height: 24px; } 
+        .icon-cama{ background-position: -481px 0; width: 35px; height: 18px; } 
+        .icon-glyphicons__170_facebook{ background-position: -590px 0; width: 24px; height: 24px; } 
+        .icon-glyphicons__171_twitter_t{ background-position: -688px 0; width: 24px; height: 24px; } 
+        .icon-glyphicons__172_twitter{ background-position: -786px 0; width: 24px; height: 24px; } 
+*/
+
+    
+    
+    .extras 
+    {
+        margin-top: @margin/2;
+        margin-bottom: @margin/2;
+        li 
+        {
+            width: (@anchodatos/2) - @margin*2;
+            float:left;
+            margin-right: @margin;
+        }
+        
+    }
+    
+}
+
+#buscaform
+{
+    margin: 10px 0;
+    padding: 10px;
+    #gradient > .vertical(lighten(@back-color, 10%), @back-color);
+    
+    label
+    {
+        color: @white;
+        text-transform: uppercase;
+    }
+}
+
+#navlist
+{
+    margin-bottom: 10px;
+    
+    li 
+    {
+     font-weight: bold;
+     border-bottom: 1px solid @grayLight;
+     border-top: 1px solid lighten(@grayLight, 15%);
+     
+     a
+     {
+        color: @grayLight;
+        text-decoration: none;
+        display: block;
+        padding: 5px 5px 6px;
+        
+         &:hover, &.current
+         {
+             color: @red;
+             #gradient > .vertical(lighten(@grayLight, 20%), lighten(@gray-lighter, 15%));
+         }
+         &.current:before
+         {
+             content:'• ';
+         }
+         
+     }
+     
+     
+    }
+     
+}
+
+#links {
+    margin-bottom: 10px;
+    
+    li 
+    {
+     color: @gray;
+     margin-bottom: 5px;
+     text-transform: lowercase;
+     padding-bottom: 5px;
+     border-bottom: 1px solid @gray;
+     
+     a
+     {
+        display:block;
+        font-weight: bold;
+        color: darken(@back-color, 15%);
+        text-decoration: none;
+        
+         &:hover
+         {
+             text-decoration: underline;
+         }
+         
+         
+     }
+     
+     
+    }
+    
+}
+
+
+/* Footer */
+#container footer 
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: @white;
+    #gradient > .vertical(@back-color, darken(@back-color, 10%));    
+}
+
+/* Calendar Styles */
+
+
+/* For the details, see: http://flowplayer.org/tools/dateinput/index.html#skinning */
+
+/* the input field */
+.date {
+    
+}
+
+/* calendar root element */
+#calroot {
+	/* place on top of other elements. set a higher value if nessessary */
+	z-index:10000;
+	
+	margin-top:-1px;
+	width:198px;
+	padding:2px;
+	background-color:@white;
+	font-size:11px;
+	border:1px solid @gray-lighter;
+	
+        .border-radius(5px);
+        .box-shadow(0 0 15px @gray)
+	
+}
+
+/* head. contains title, prev/next month controls and possible month/year selectors */
+
+.flechitas{background: url(../img/next-prev.png) no-repeat;}
+
+.next{ .flechitas; background-position: 0 0; width: 14px; height: 14px; } 
+.prev{ .flechitas; background-position: 0 -15px; width: 14px; height: 14px; } 
+
+
+#calhead {	
+	padding:2px 0;
+	height:24px;
+} 
+
+#caltitle {
+	font-size:14px;
+	color:#0150D1;	
+	float:left;
+	text-align:center;
+	width:155px;
+	line-height:20px;
+	text-shadow:0 1px 0 #ddd;
+}
+
+#calnext, #calprev {
+	display:block;
+        
+	width:14px;
+	height:14px;
+	.prev;
+        
+	float:left;
+	cursor:pointer;
+}
+
+#calnext {
+	.next;
+	float:right;
+}
+
+#calprev.caldisabled, #calnext.caldisabled {
+	visibility:hidden;	
+}
+
+/* year/month selector */
+#caltitle select {}
+
+/* names of the days */
+#caldays {
+	height:16px;
+	border-bottom:1px solid #ddd;
+}
+
+#caldays span {
+	display:block;
+	float:left;
+	width:28px;
+	text-align:center;
+}
+
+/* container for weeks */
+#calweeks {
+	background-color:#fff;
+	margin-top:4px;
+}
+
+/* single week */
+.calweek {
+	clear:left;
+	height:22px;
+}
+
+/* single day */
+.calweek a {
+	display:block;
+	float:left;
+	width:27px;
+	height:20px;
+	text-decoration:none;
+	font-size:11px;
+	margin-left:1px;
+	text-align:center;
+	line-height:20px;
+	color:#666;
+        
+        .border-radius(3px); 		
+} 
+
+/* different states */
+.calweek a:hover, .calfocus {
+	background-color:@gray-lighter;
+}
+
+/* sunday */
+a.calsun {
+	color:red;		
+}
+
+/* offmonth day */
+a.caloff {
+	color:#ccc;		
+}
+
+a.caloff:hover {
+	background-color:rgb(245, 245, 250);		
+}
+
+
+/* unselecteble day */
+a.caldisabled {
+	background-color:#efefef !important;
+	color:#ccc	!important;
+	cursor:default;
+}
+
+/* current day */
+#calcurrent {
+	background-color:@back-color;
+	color:#fff;
+}
+
+/* today */
+#caltoday {
+	background-color:#333;
+	color:#fff;
+}
+
+/*
+ * Non-semantic helper classes
+*/
+
+/* for image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+/* Hide for both screenreaders and browsers
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders
+   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden  */
+.visuallyhidden { position: absolute !important;
+                  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+                  clip: rect(1px, 1px, 1px, 1px); }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }

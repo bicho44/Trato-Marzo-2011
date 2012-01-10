@@ -1,0 +1,372 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+             Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+        <!-- CSS: implied media="all" -->
+        <link rel="stylesheet" href="css/style.css?v=3">
+
+       
+        <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+        <script src="js/libs/modernizr-1.7.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <div id="container" class="container">
+            <header role="header">
+                <div id="logo">
+                    <img src="img/logo-blanco.png" width="160" height="86" alt="Tratodirecto"/>
+                    <h1 class="ir">Tratodirecto.com.ar</h1>
+                </div>
+
+                <nav id="botonera-principal">
+                    <ul>
+                        <li id="reservas"><a href="#">Reservas</a></li>
+                        <li id="pcosta"><a href="#">Propiedades con Costa</a></li>
+                        <li id="pcerro"><a href="#">Propiedades con Cerro</a></li>
+                        <li id="pbaja"><a href="#">Propiedades Baja Temporada</a></li>
+                        <li id="prental"><a href="#" >Alquiler de Autos</a></li>
+                    </ul>
+
+                </nav>
+                <div id="sidebar-header" >
+                    <div id="lenguaje">
+                        <ul>
+                            <li class="spain"><a href="#">Español</a></li>
+                            <li class="england"><a href="#">Inglés</a></li>
+                            <li class="brasil"><a href="#">Portugués</a></li>
+                        </ul>
+                    </div>
+                    <div id="botonera-secundaria">
+                        <ul>
+                            <li><a href="#" class="botton">Reservas</a></li>
+                            <li><a href="#" class="botton">Propietarios</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <section id="buscador">
+                <form action="" method="post" id="buscaprop">
+                    <div class="row">
+                        <label for="local_id">Ciudad</label>
+                        <select id="local_id" name="local_id">
+                            <option value="">Seleccione</option>  <option value="5">Buenos Aires Capital Federal</option> 
+                            <option value="14">Chile</option> 
+                            <option value="11">Cordoba</option> 
+                            <option value="8">Costa Atlantica</option> 
+                            <option value="3">El Bolsón</option> 
+                            <option value="4">Las Grutas</option> 
+                            <option value="13">Litoral Argentino</option> 
+                            <option value="10">Mendoza</option> 
+                            <option value="2">Neuquén</option> 
+                            <option value="12">Parque Nacional Los Alerces</option> 
+                            <option value="1" selected>San Carlos de Bariloche</option> 
+                            <option value="7">San Martin de los Andes</option> 
+                            <option value="9">Tandil</option> 
+                            <option value="6">Villa La Angostura</option> 
+                        </select>
+                        <select id="tipo" name="tipo"> 
+                            <option value="">Seleccione una Categoría</option>  
+                            <option value="j">Auto</option> 
+                            <option value="b">Bungalow</option> 
+                            <option value="c">Cabaña</option> 
+                            <option value="a">Casa</option> 
+                            <option value="d">Departamento</option> 
+                            <option value="x">Excursiones</option> 
+                            <option value="f">Habitación</option> 
+                            <option value="e">Hotel</option> 
+                            <option value="h">Oficina</option> 
+                            <option value="t">Todos los Tipos</option> 
+                        </select> 
+
+                        <label for="fecha-entrada">Entrada</label>
+                        <input type="date" id="fecha-entrada" name="fecha-entrada" value="" class="input_small"/>
+                        <label for="fecha-salida">Salida</label>
+                        <input type="date" id="fecha-salida" name="fecha-salida" value="" class="input_small" />
+                    </div>
+
+                    <div class="row">
+                        <label for="max">Pasajeros</label> 
+                        <input name="max" type="number" id="max" class="input_tiny" value=""/>
+
+                        <label for="precioin">Desde $</label> 
+                        <input name="precioin" type="number" id="precioin" class="input_small" value="" />
+
+                        <label for="precioout">Hasta $</label> 
+                        <input name="precioout" type="number" id="precioout" class="input_small" value="" />
+
+                        <input type="submit" name="submit" id="Buscar" value="Buscar" />
+                    </div>
+                </form>
+                <div id="excursiones">
+                    <h3>Excursiones</h3>
+                    <img src="img/mapitas.png" width="158" height="66" alt="Excursiones"/>
+                </div>
+
+            </section>
+            <div id="main" role="main">
+                <section id="mediamain">
+                    <section id="mapa">
+                        <img src="img/mapas-grandes.jpg" width="700" height="290" alt="Mapas Demo"/>
+                        <h4>Playa Bonita</h4>
+                        <p>
+                            Sobre la costa del Nahuel Huapi a la altura del kilómetro 8 de la avenida 
+                            Exequiel Bustillo, la histórica Playa Bonita goza del cobijo del sol y del reparo
+                            del viento. A esto se suma su atractiva cercanía de la no menos histórica
+                            Isla Huemul, donde a principios de los años cuarenta se iniciaron las investigaciones
+                            a nivel nacional en materia de energía atómica.
+                        </p>
+                        <p><a href="#">[ver mas +]</a></p>
+                    </section>
+
+                    <section id="propiedades">
+                        <h2>Alojamientos en San Carlos de Bariloche disponibles en la próxima quincena</h2>
+                        <article class="propiedad">
+                            <div class="colfotos">
+                                <div class="fotos">
+                                    <div class="scroll">
+                                        <ul class="items">
+                                            <li><img src="http://lorempixum.com/600/450/nature/1" alt="" /></li>
+                                            <li><img src="http://lorempixum.com/600/450/nature/2" alt="" /></li>
+                                            <li><img src="http://lorempixum.com/600/450/nature/3" alt="" /></li>
+                                            <li><img src="http://lorempixum.com/600/450/nature/4" alt="" /></li>
+                                        </ul>
+                                    </div> <!-- end Scroll -->
+                                    
+                                    <div class="botonera">
+                                        <!-- "previous page" action --> 
+                                        <a class="ant browse der">Anterior</a>
+                                        <!-- wrapper for navigator elements -->
+                                        <div class="navi"></div>
+                                        <!-- "next page" action --> 
+                                        <a class="sig browse izq">Siguiente</a> 
+                                    </div>
+                                </div> <!-- end Fotos -->
+
+
+                            </div><!-- end colfotos -->
+
+                            <div class="datos">
+                                <div class="info">
+                                    <p class="codigo">Código: 4446</p>
+                                    <p class="titular">Natalia Colo Braunstein</p>
+                                    <p>Capacidad Máxima: 8</p>
+                                    <p>Ubicación: <a href="#">Pájaro Azul</a></p>
+
+                                    <p class="precio">Costo por día: $1050.-</p>
+                                </div> <!-- End Info -->
+
+                                <!-- <ul class="iconos">
+                                    <li class="pasajeros">6</li>
+                                    <li class="camas">1 doble <br> 4 simples</li>
+                                    <li class="internet">wifi</li>
+                                    <li class="telefono">Sólo recepción</li>
+                                </ul> end iconos 
+                                -->
+
+
+                                <ul class="extras">
+                                    <li>Wi-fi</li>
+                                    <li>Televisor</li>
+                                    <li>Parrilla</li>
+                                    <li>Jacuzzi</li>
+                                    <li>Hogar</li>
+                                    <li><a href="#">Vista al Lago</a></li>
+                                </ul><!-- end extras -->
+                                <a href="#" class="botonconsulta">Consulte por esta Propiedad</a>
+                            </div><!-- end datos -->
+                            <div class="clearfix"></div>
+                            <div class="descripcion">
+                                <h4>Descripción</h4>
+                                <p>Magna turpis turpis arcu sagittis porttitor odio turpis? Duis! Amet adipiscing 
+                                    nec eu hac nisi, integer, urna parturient pulvinar nec? Magna proin hac et.
+                                    <a href="#">(+) ver mas</a>
+                                </p>
+                            </div>
+                        </article> <!-- end Propiedad -->
+
+                        <article class="propiedad">
+
+                            <div class="fotos">
+                                <div class="scroll">
+                                    <ul class="items">
+                                        <li><img src="http://lorempixum.com/600/450/nature/5" alt="" /></li>
+                                        <li><img src="http://lorempixum.com/600/450/nature/6" alt="" /></li>
+                                        <li><img src="http://lorempixum.com/600/450/nature/7" alt="" /></li>
+                                        <li><img src="http://lorempixum.com/600/450/nature/8" alt="" /></li>
+                                        <li><img src="http://lorempixum.com/600/450/nature/9" alt="" /></li>
+                                    </ul>
+                                </div> <!-- end Scroll -->
+                                <!-- "previous page" action --> 
+                                <a class="ant browse der">Anterior</a>
+                                <!-- wrapper for navigator elements -->
+                                <div class="navi"></div>
+                                <!-- "next page" action --> 
+                                <a class="sig browse izq">Siguiente</a> 
+                            </div> <!-- end Fotos -->
+
+                            <div class="datos">
+                                <ul class="iconos">
+                                    <li class="pasajeros">6</li>
+                                    <li class="camas">1 doble <br> 4 simples</li>
+                                    <li class="internet">wifi</li>
+                                    <li class="telefono">Sólo recepción</li>
+                                </ul>
+                                <div class="info">
+                                    <p class="titular">Mariana García</p>
+                                    <p>Código: 943</p>
+                                    <p>Capacidad Máxima: 5</p>
+                                    <p>Ubicación: <a href="#">Península San Pedro</a></p>
+
+                                    <p class="precio">Costo por día: $1050.-</p>
+                                </div>
+
+                                <ul class="extras">
+                                    <li>Wi-fi</li>
+                                    <li>Televisor</li>
+                                    <li>Parrilla</li>
+                                    <li>Jacuzzi</li>
+                                    <li>Hogar</li>
+                                    <li><a href="#">Vista al Lago</a></li>
+                                </ul>
+
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="descripcion">
+                                <h4>Descripción</h4>
+                                <p>Magna turpis turpis arcu sagittis porttitor odio turpis? Duis! Amet adipiscing 
+                                    nec eu hac nisi, integer, urna parturient pulvinar nec? 
+                                    <a href="#">(+) ver mas</a></p>
+                            </div>
+                        </article> <!-- end Propiedad -->
+
+                    </section><!-- End Propieades -->
+                </section>
+                <aside>
+                    <div id="buscaform">
+                        <form name="buscar" method="get" action="<?php echo $PHP_SELF; ?>" class="buscador">
+                            <label for="propiedad_id">Código Inmueble</label>
+                            <input name="propiedad_id" type="number" value="" class="input_small" maxlength="5" />
+                            <input type="submit" name="IR" id="IR" value="Ir" />
+                        </form>
+                    </div>
+                    <nav id="navlist">
+                        <h3>Ciudad</h3>
+                        <ul>
+                            <li>
+                                <a href="?e=ciudad&amp;localidad_id=1" class="current">San Carlos de Bariloche</a>
+                            </li>
+                            <li><a href="?e=ciudad&amp;localidad_id=5">Buenos Aires Capital Federal</a></li>
+                            <li><a href="?e=ciudad&amp;localidad_id=2">Neuquén</a></li>
+                            <li><a href="?e=ciudad&amp;localidad_id=7">San Martin de los Andes</a></li>
+                            <li><a href="?e=ciudad&amp;localidad_id=6">Villa La Angostura</a></li>
+                            <li><a href="?e=ciudad&amp;localidad_id=8">Costa Atlantica</a></li>
+                            <li><a href="?e=ciudad&amp;localidad_id=9">Tandil</a></li>
+                            <li><a href="?e=ciudad&amp;localidad_id=3">El Bolsón</a></li>
+                            <li><a href="?e=ciudad&amp;localidad_id=4">Las Grutas</a></li>
+                            <li><a href="?e=ciudad&amp;localidad_id=10">Mendoza</a></li>
+                            <li><a href="?e=ciudad&amp;localidad_id=11">Cordoba</a></li>
+                            <li><a href="?e=ciudad&amp;localidad_id=12">Parque Nacional Los Alerces</a></li>
+                            <li><a href="?e=ciudad&amp;localidad_id=13">Litoral Argentino</a></li>
+                        </ul>
+                    </nav>
+                    <nav id="links">
+                        <h3>Links</h3>
+                        <ul>
+                            <li><a href="http://www.aasnowboard.com.ar" target="_blank" title="Reservas de Equipos de Sky y Snowboard.Buenos Aires-Bariloche." >aasnowboard.com.ar</a>
+                                Reservas de Equipos de Sky y Snowboard.Buenos Aires-Bariloche.</li>
+                            <li><a href="http://www.barilochense.com" target="_blank" title="El portal de Bariloche" >Barilochense.com</a>
+                                El portal de Bariloche</li>
+                            <li><a href="http://www.borispatagonia.com" target="_blank" title="VIAJE EN PATAGONIA ARGENTINA Y BARILOCHE - SERVICIO EXCLUSIVO Y PERSONALIZADO - ORGANIZADOR DE VIAJES Y CONSEJOS" >Borispatagonia.com</a>
+                                VIAJE EN PATAGONIA ARGENTINA Y BARILOCHE - SERVICIO EXCLUSIVO Y PERSONALIZADO - ORGANIZADOR DE VIAJES Y CONSEJOS</li>
+                            <li><a href="http://www.dolarhoy.com" target="_blank" title="Dolar Hoy - La cotización es a fines informativos" >Cotización del Dolar</a>
+                                Dolar Hoy - La cotización es a fines informativos</li>
+                            <li><a href="http://espanol.weather.com/weather/local/ARRN0116" target="_blank" title="Weather Channel - Bariloche" >El clima en Bariloche</a>
+                                Weather Channel - Bariloche</li>
+                            <li><a href="http://www.entreyarte.blogspot.com" target="_blank" title="Ateliers para artistas en pleno corazÃ³n de La Boca-Buenos Aires" >entreyarte.blogspot.com</a>
+                                Ateliers para artistas en pleno corazón de La Boca-Buenos Aires</li>
+                            <li><a href="http://www.fiestasyfestines.com.ar" target="_blank" title="Guía de servicios para fiestas, organiza una fiesta o evento desde tu computadora...." >Fiestasyfestines.com.ar</a>
+                                Guía de servicios para fiestas, organiza una fiesta o evento desde tu computadora....</li>
+                            <li><a href="http://www.hoteles-y-posadas.com" target="_blank" title="La mejor guia para sus vacaciones!" >Hoteles y Posadas</a>
+                                La mejor guia para sus vacaciones!</li>
+                            <li><a href="http://www.stepsonline.com.ar" target="_blank" title="Enseñamos idiomas inglés, portugués y español para extranjeros a traves del juego." >INSTITUTO DE IDIOMAS STEPS</a>
+                                Enseñamos idiomas inglés, portugués y español para extranjeros a traves del juego.</li>
+                            <li><a href="http://www.lavaderocerrootto.com.ar/" target="_blank" title="Control de calidad, Servicio las 24 Hs. Aquiler de ropa blanca. Tintoreria. El mejor servicio de Bariloche!!!" >Lavadero Cerro Otto. Lavadero industrial y Tintoreria.</a>
+                                Control de calidad, Servicio las 24 Hs. Aquiler de ropa blanca. Tintoreria. El mejor servicio de Bariloche!!!</li>
+                            <li><a href="http://mundo-virtual.com.ar" target="_blank" title="La Mejor Casa de Computacion y Playstation de Bariloche. Moreno y Beschedt" >Mundo Virtual</a>
+                                La Mejor Casa de Computacion y Playstation de Bariloche. Moreno y Beschedt</li>
+                            <li><a href="http://www.periodismo.com" target="_blank" title="El portal de noticias en español" >Periodismo.com</a>
+                                El portal de noticias en español</li>
+                            <li><a href="http://www.radioelarka.com.ar" target="_blank" title="Navegando cielos" >Radio El Arka 100.1</a>
+                                Navegando cielos</li>
+                            <li><a href="http://www.todoar.com.ar" target="_blank" title="CÃ­rculo Amigos Todoar" >TodoAr</a>
+                                Círculo Amigos Todoar</li>
+                            <li><a href="http://www.todobariloche.com" target="_blank" title="Si viaja a Bariloche no deje de visitarnos" >TodoBariloche.com</a>
+                                Si viaja a Bariloche no deje de visitarnos</li>
+                        </ul>
+                    </nav>
+
+                </aside>
+            </div>
+            <footer>
+                <p>copyright 2011 Tratodirecto.com.ar</p>
+                <p>Diseño: Ignacio Braunstein - WebCode: Federico Reinoso </p>
+            </footer>
+        </div> <!--! end of #container -->
+
+
+        <!-- JavaScript at the bottom for fast page loading -->
+
+        <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+        <script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+
+
+        <!-- scripts concatenated and minified via ant build script-->
+        <script src="http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js"></script>
+        <script src="js/mylibs/jquery.formalize.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+
+        <script src="js/script.js"></script>
+        <!-- end scripts-->
+
+
+        <!--[if lt IE 7 ]>
+          <script src="js/libs/dd_belatedpng.js"></script>
+          <script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+        <![endif]-->
+
+
+        <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
+        <script>
+            var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+                g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+                s.parentNode.insertBefore(g,s)}(document,"script"));
+        </script>
+
+    </body>
+</html>
